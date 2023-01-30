@@ -1,0 +1,15 @@
+<h1>Registered Users:</h1>
+<ol>
+<% @users.each do |user| %>
+  <li><%= user.username%></li>
+  <%= link_to 'Edit', edit_user_path(user)%>
+  <p><%= user.email%></p>
+  <p>Joined: <%= user.created_at %> </p>
+<% end %>
+</ol>
+
+<ul>
+  <%= link_to 'create new user ', new_user_path %>
+  <span> | </span>
+  <%= link_to 'all users', users_path %>
+</ul>
